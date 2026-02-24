@@ -1,0 +1,52 @@
+{
+  "agent_name": "Email Monitor & Auto-Responder Agent",
+  "agent_id": "699d9312db2449ce8a2152d0",
+  "description": "Fetches new emails from vaibhavi@lyzr.ai on a schedule, searches the knowledge base for answers, evaluates confidence level. If high confidence, composes a friendly and conversational reply and sends it back to the sender via Gmail. If low confidence, flags the email with the original query details for human review.",
+  "agent_type": "json",
+  "accessor": "result",
+  "auto_generated": true,
+  "response_schema": {
+    "processed_emails": [
+      {
+        "sender": "string",
+        "subject": "string",
+        "body_snippet": "string",
+        "received_at": "string",
+        "status": "string",
+        "confidence": "string",
+        "flagged_reason": "string",
+        "auto_reply_sent": "string",
+        "thread_id": "string",
+        "message_id": "string"
+      }
+    ],
+    "summary": {
+      "total_processed": "number",
+      "auto_responded": "number",
+      "flagged": "number",
+      "timestamp": "string"
+    }
+  },
+  "example_response": {
+    "processed_emails": [
+      {
+        "sender": "sample string",
+        "subject": "sample string",
+        "body_snippet": "sample string",
+        "received_at": "sample string",
+        "status": "sample string",
+        "confidence": "sample string",
+        "flagged_reason": "sample string",
+        "auto_reply_sent": "sample string",
+        "thread_id": "sample string",
+        "message_id": "sample string"
+      }
+    ],
+    "summary": {
+      "total_processed": 0,
+      "auto_responded": 0,
+      "flagged": 0,
+      "timestamp": "sample string"
+    }
+  }
+}

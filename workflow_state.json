@@ -1,0 +1,39 @@
+{
+  "agents": {
+    "email_monitor_agent": {
+      "agent_id": "699d9312db2449ce8a2152d0",
+      "name": "Email Monitor & Auto-Responder Agent",
+      "has_knowledge_base": true,
+      "rag_id": "699d92c5b45a5c2df18ef5d5",
+      "rag_name": "smartsupporthubkbq4vg",
+      "has_schedule": true,
+      "schedule_id": "699d931d399dfadeac390818",
+      "schedule_cron": "*/15 * * * *",
+      "schedule_timezone": "UTC",
+      "schedule_is_active": false,
+      "tools": ["GMAIL_FETCH_EMAILS", "GMAIL_SEND_EMAIL", "GMAIL_REPLY_TO_THREAD"]
+    },
+    "human_reply_agent": {
+      "agent_id": "699d9313db2449ce8a2152d2",
+      "name": "Human Reply Agent",
+      "has_knowledge_base": true,
+      "rag_id": "699d92c5b45a5c2df18ef5d5",
+      "rag_name": "smartsupporthubkbq4vg",
+      "has_schedule": false,
+      "tools": ["GMAIL_REPLY_TO_THREAD", "GMAIL_SEND_EMAIL"]
+    }
+  },
+  "knowledge_base": {
+    "rag_id": "699d92c5b45a5c2df18ef5d5",
+    "rag_name": "smartsupporthubkbq4vg",
+    "name": "Smart Support Hub KB"
+  },
+  "schedule": {
+    "schedule_id": "699d931d399dfadeac390818",
+    "agent_id": "699d9312db2449ce8a2152d0",
+    "cron_expression": "*/15 * * * *",
+    "timezone": "UTC",
+    "is_active": false,
+    "message": "Fetch new unread emails from vaibhavi@lyzr.ai inbox, search the knowledge base for answers, and either auto-respond with high confidence answers or flag low confidence emails for human review. Process all new emails since the last check."
+  }
+}

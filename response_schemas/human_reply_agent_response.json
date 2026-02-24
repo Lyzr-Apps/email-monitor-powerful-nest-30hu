@@ -1,0 +1,30 @@
+{
+  "agent_name": "Human Reply Agent",
+  "agent_id": "699d9313db2449ce8a2152d2",
+  "description": "Takes a flagged email's context and the support manager's input, drafts a suggested response using the knowledge base, and sends the final approved reply via Gmail to the original sender.",
+  "agent_type": "json",
+  "accessor": "result",
+  "auto_generated": true,
+  "response_schema": {
+    "action": "string",
+    "draft_response": "string",
+    "sent_to": "string",
+    "subject": "string",
+    "reply_body": "string",
+    "thread_id": "string",
+    "message_id": "string",
+    "status": "string",
+    "timestamp": "string"
+  },
+  "example_response": {
+    "action": "sample string",
+    "draft_response": "sample string",
+    "sent_to": "sample string",
+    "subject": "sample string",
+    "reply_body": "sample string",
+    "thread_id": "sample string",
+    "message_id": "sample string",
+    "status": "sample string",
+    "timestamp": "sample string"
+  }
+}

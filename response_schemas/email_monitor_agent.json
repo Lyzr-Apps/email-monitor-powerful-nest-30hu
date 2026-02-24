@@ -1,0 +1,29 @@
+{
+  "agent_name": "Email Monitor & Auto-Responder Agent",
+  "agent_id": "699d9312db2449ce8a2152d0",
+  "agent_type": "json",
+  "accessor": "json",
+  "has_module_outputs": false,
+  "schema": {
+    "processed_emails": [
+      {
+        "sender": "string",
+        "subject": "string",
+        "body_snippet": "string",
+        "received_at": "string",
+        "status": "string (auto_responded | flagged)",
+        "confidence": "string (HIGH | LOW)",
+        "flagged_reason": "string",
+        "auto_reply_sent": "string",
+        "thread_id": "string",
+        "message_id": "string"
+      }
+    ],
+    "summary": {
+      "total_processed": "number",
+      "auto_responded": "number",
+      "flagged": "number",
+      "timestamp": "string"
+    }
+  }
+}

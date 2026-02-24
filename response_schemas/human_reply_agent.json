@@ -1,0 +1,18 @@
+{
+  "agent_name": "Human Reply Agent",
+  "agent_id": "699d9313db2449ce8a2152d2",
+  "agent_type": "json",
+  "accessor": "json",
+  "has_module_outputs": false,
+  "schema": {
+    "action": "string (draft | send)",
+    "draft_response": "string",
+    "sent_to": "string",
+    "subject": "string",
+    "reply_body": "string",
+    "thread_id": "string",
+    "message_id": "string",
+    "status": "string (drafted | sent | error)",
+    "timestamp": "string"
+  }
+}

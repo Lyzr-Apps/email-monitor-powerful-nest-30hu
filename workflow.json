@@ -1,0 +1,14 @@
+{
+  "nodes": [
+    {"id": "input_node", "type": "Input", "label": "Incoming Support Emails", "nodeCategory": "input"},
+    {"id": "email_monitor_agent", "type": "Agent", "label": "Email Monitor & Auto-Responder", "nodeCategory": "agent"},
+    {"id": "human_reply_agent", "type": "Agent", "label": "Human Reply Agent", "nodeCategory": "agent"},
+    {"id": "output_node", "type": "Output", "label": "Email Response Sent", "nodeCategory": "end"}
+  ],
+  "edges": [
+    {"source": "input_node", "target": "email_monitor_agent"},
+    {"source": "input_node", "target": "human_reply_agent"},
+    {"source": "email_monitor_agent", "target": "output_node"},
+    {"source": "human_reply_agent", "target": "output_node"}
+  ]
+}
