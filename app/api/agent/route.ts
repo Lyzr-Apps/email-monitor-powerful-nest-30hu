@@ -144,7 +144,7 @@ export async function POST(request: NextRequest) {
           response: { status: 'error', result: {}, message: 'LYZR_API_KEY not configured' },
           error: 'LYZR_API_KEY not configured on server',
         },
-        { status: 500 }
+        { status: 200 }
       )
     }
 
@@ -163,7 +163,7 @@ export async function POST(request: NextRequest) {
         response: { status: 'error', result: {}, message: errorMsg },
         error: errorMsg,
       },
-      { status: 500 }
+      { status: 200 }
     )
   }
 }
@@ -227,7 +227,7 @@ async function submitTask(body: any) {
         error: errorMsg,
         raw_response: submitText,
       },
-      { status: submitRes.status }
+      { status: 200 }
     )
   }
 
@@ -261,10 +261,11 @@ async function pollTask(task_id: string) {
       {
         success: false,
         status: 'failed',
+        response: { status: 'error', result: {}, message: msg },
         error: msg,
         raw_response: pollText,
       },
-      { status: pollRes.status }
+      { status: 200 }
     )
   }
 
@@ -275,7 +276,7 @@ async function pollTask(task_id: string) {
     return NextResponse.json({ status: 'processing' })
   }
 
-  // Task failed
+  // Task failed — return 200 with success:false so fetchWrapper doesn't treat it as server error
   if (task.status === 'failed') {
     return NextResponse.json(
       {
@@ -284,7 +285,7 @@ async function pollTask(task_id: string) {
         response: { status: 'error', result: {}, message: task.error || 'Agent task failed' },
         error: task.error || 'Agent task failed',
       },
-      { status: 500 }
+      { status: 200 }
     )
   }
 

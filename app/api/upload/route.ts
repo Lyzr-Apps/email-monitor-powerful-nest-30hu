@@ -18,7 +18,7 @@ export async function POST(request: NextRequest) {
           timestamp: new Date().toISOString(),
           error: 'LYZR_API_KEY not configured on server',
         },
-        { status: 500 }
+        { status: 200 }
       )
     }
 
@@ -98,7 +98,7 @@ export async function POST(request: NextRequest) {
           timestamp: new Date().toISOString(),
           error: errorText,
         },
-        { status: response.status }
+        { status: 200 }
       )
     }
   } catch (error) {
@@ -116,7 +116,7 @@ export async function POST(request: NextRequest) {
         timestamp: new Date().toISOString(),
         error: error instanceof Error ? error.message : String(error),
       },
-      { status: 500 }
+      { status: 200 }
     )
   }
 }

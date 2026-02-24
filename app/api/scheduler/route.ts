@@ -15,7 +15,7 @@ function apiKeyCheck() {
   if (!LYZR_API_KEY) {
     return NextResponse.json(
       { success: false, error: 'LYZR_API_KEY not configured on server' },
-      { status: 500 }
+      { status: 200 }
     )
   }
   return null
@@ -102,7 +102,7 @@ export async function GET(request: NextRequest) {
       const errorText = await response.text()
       return NextResponse.json(
         { success: false, error: `Scheduler API error: ${response.status}`, details: errorText },
-        { status: response.status }
+        { status: 200 }
       )
     }
 
@@ -111,7 +111,7 @@ export async function GET(request: NextRequest) {
   } catch (error) {
     return NextResponse.json(
       { success: false, error: error instanceof Error ? error.message : 'Server error' },
-      { status: 500 }
+      { status: 200 }
     )
   }
 }
@@ -195,7 +195,7 @@ export async function POST(request: NextRequest) {
       const errorText = await response.text()
       return NextResponse.json(
         { success: false, error: `Trigger failed: ${response.status}`, details: errorText },
-        { status: response.status }
+        { status: 200 }
       )
     }
 
@@ -203,7 +203,7 @@ export async function POST(request: NextRequest) {
       const errorText = await response.text()
       return NextResponse.json(
         { success: false, error: `Scheduler API error: ${response.status}`, details: errorText },
-        { status: response.status }
+        { status: 200 }
       )
     }
 
@@ -212,7 +212,7 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     return NextResponse.json(
       { success: false, error: error instanceof Error ? error.message : 'Server error' },
-      { status: 500 }
+      { status: 200 }
     )
   }
 }
@@ -249,12 +249,12 @@ export async function DELETE(request: NextRequest) {
     const errorText = await response.text()
     return NextResponse.json(
       { success: false, error: `Failed to delete schedule: ${response.status}`, details: errorText },
-      { status: response.status }
+      { status: 200 }
     )
   } catch (error) {
     return NextResponse.json(
       { success: false, error: error instanceof Error ? error.message : 'Server error' },
-      { status: 500 }
+      { status: 200 }
     )
   }
 }

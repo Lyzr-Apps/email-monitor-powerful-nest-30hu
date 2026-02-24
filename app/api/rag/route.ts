@@ -47,7 +47,7 @@ export async function POST(request: NextRequest) {
           success: false,
           error: "LYZR_API_KEY not configured on server",
         },
-        { status: 500 }
+        { status: 200 }
       );
     }
 
@@ -119,7 +119,7 @@ export async function POST(request: NextRequest) {
             error: `Failed to get documents: ${response.status}`,
             details: errorText,
           },
-          { status: response.status }
+          { status: 200 }
         );
       }
     } else {
@@ -179,7 +179,7 @@ export async function POST(request: NextRequest) {
             error: `Failed to train document: ${trainResponse.status}`,
             details: errorText,
           },
-          { status: trainResponse.status }
+          { status: 200 }
         );
       }
 
@@ -201,7 +201,7 @@ export async function POST(request: NextRequest) {
         success: false,
         error: error instanceof Error ? error.message : "Server error",
       },
-      { status: 500 }
+      { status: 200 }
     );
   }
 }
@@ -215,7 +215,7 @@ export async function PATCH(request: NextRequest) {
           success: false,
           error: "LYZR_API_KEY not configured on server",
         },
-        { status: 500 }
+        { status: 200 }
       );
     }
 
@@ -249,7 +249,7 @@ export async function PATCH(request: NextRequest) {
           error: `Failed to crawl website: ${response.status}`,
           details: errorText,
         },
-        { status: response.status }
+        { status: 200 }
       );
     }
 
@@ -267,7 +267,7 @@ export async function PATCH(request: NextRequest) {
         success: false,
         error: error instanceof Error ? error.message : "Server error",
       },
-      { status: 500 }
+      { status: 200 }
     );
   }
 }
@@ -281,7 +281,7 @@ export async function DELETE(request: NextRequest) {
           success: false,
           error: "LYZR_API_KEY not configured on server",
         },
-        { status: 500 }
+        { status: 200 }
       );
     }
 
@@ -327,7 +327,7 @@ export async function DELETE(request: NextRequest) {
           error: `Failed to delete documents: ${response.status}`,
           details: errorText,
         },
-        { status: response.status }
+        { status: 200 }
       );
     }
   } catch (error) {
@@ -336,7 +336,7 @@ export async function DELETE(request: NextRequest) {
         success: false,
         error: error instanceof Error ? error.message : "Server error",
       },
-      { status: 500 }
+      { status: 200 }
     );
   }
 }
