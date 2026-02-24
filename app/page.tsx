@@ -645,10 +645,7 @@ export default function Page() {
     try {
       const result = await triggerScheduleNow(scheduleId)
       if (result.success) {
-        showNotification('success', 'Email monitor triggered. Check back for results shortly.')
-        setTimeout(() => {
-          runEmailMonitor()
-        }, 3000)
+        showNotification('success', 'Email monitor triggered successfully. The scheduled agent will process emails shortly.')
       } else {
         setScheduleError(result?.error ?? 'Failed to trigger schedule')
       }
@@ -656,7 +653,7 @@ export default function Page() {
       setScheduleError('Network error while triggering schedule')
     }
     setScheduleLoading(false)
-  }, [scheduleId, showNotification, runEmailMonitor])
+  }, [scheduleId, showNotification])
 
   // ---- Select email for detail view ----
   const openEmailDetail = useCallback((email: ProcessedEmail) => {

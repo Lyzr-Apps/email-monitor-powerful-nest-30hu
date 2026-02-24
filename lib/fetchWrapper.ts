@@ -97,7 +97,7 @@ const fetchWrapper = async (...args) => {
         response.status,
         requestUrl,
       );
-      return;
+      return response;
     }
 
     return response;

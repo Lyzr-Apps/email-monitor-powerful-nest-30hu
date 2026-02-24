@@ -115,6 +115,18 @@ function normalizeResponse(parsed: any): NormalizedAgentResponse {
 }
 
 /**
+ * GET /api/agent — Health-check endpoint
+ */
+export async function GET() {
+  return NextResponse.json({
+    success: true,
+    status: 'ok',
+    configured: !!LYZR_API_KEY,
+    timestamp: new Date().toISOString(),
+  })
+}
+
+/**
  * POST /api/agent
  *
  * Two modes, both POST:
